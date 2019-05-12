@@ -1,3 +1,5 @@
+UMAP fork that extracts nndescent inputs and outputs
+
 .. image:: https://img.shields.io/pypi/v/umap-learn.svg
     :target: https://pypi.python.org/pypi/umap-learn/
     :alt: PyPI Version
