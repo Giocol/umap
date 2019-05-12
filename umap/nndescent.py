@@ -56,6 +56,13 @@ def make_nn_descent(dist, dist_args):
         leaf_array=None,
         verbose=False,
     ):
+        # Really bad debugging code starts here
+        inputs = open("inputs.txt", "w")
+        outputs = open("outputs.txt", "w")
+        inputs.write(data)
+        inputs.write(n_neighbors)
+        inputs.write(rng_state)
+        # Really bad debugging code ends here for inputs
         n_vertices = data.shape[0]
 
         current_graph = make_heap(data.shape[0], n_neighbors)
@@ -112,10 +119,10 @@ def make_nn_descent(dist, dist_args):
                         c += heap_push(current_graph, q, d, p, 1)
 
             if c <= delta * n_neighbors * data.shape[0]:
-                break
-
+                break    
+        outputs.write(deheap_sort(current_graph)   # Saves outputs on a file for debugging
         return deheap_sort(current_graph)
-
+        outputs.write(nn_descent)   # Saves outputs on a file for debugging
     return nn_descent
 
 
